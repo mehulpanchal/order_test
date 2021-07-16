@@ -1,3 +1,8 @@
+# How to test
+1. `npm install` – install dependencies
+2. `npm test` – check <orders-analyzer.spec.js> file I have describe one method that runs the logic, change productId in line no 11 in that file
+3. `npm run test:watch` - run all tests in _watch mode_ (optionally, you can use it locally if you prefer)
+
 # Find a total ordered quantity of a product for every weekday
 
 You are working on an e-commerce platform which requires a new functionality to be implemented: calculating an total quantity of a given product ordered, grouped by days of week.
