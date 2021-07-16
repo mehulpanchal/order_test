@@ -56,19 +56,15 @@ export default class OrdersAnalyzer {
   }
 
   totalQuantity(paramProductId, orders) {
-    // TODO: Implement
     // 1.create an output object that holds the result
     let output = {};
     const all = this.helper.groupByDay(paramProductId, orders);
-    // console.log(all)
     //   2. loop over the weekdays and assign each day as key and its value is 0 in the output
     this.weekdays.map(weekday => {
       output[weekday] = 0;
       Object.keys(all).map((order) => {
-        if (weekday === order) {
-          if (order !== undefined && all[order].length > 0) {
-            output[weekday] = this.helper.makeSum(all[order]);
-          }
+        if (weekday === order && order !== undefined && all[order].length > 0) {          
+            output[weekday] = this.helper.makeSum(all[order]);          
         }
       });
     })
